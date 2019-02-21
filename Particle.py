@@ -9,8 +9,10 @@ class Particle(object):
     """Class that describes particle"""
     m = 1.0
 
-    def __init__(self, x0=1.0, v0=0.0,  tf = 10.0, dt = 0.001):
+    def __init__(self, x0=0.0, y0=0.0, u0=1.0, v0=1.0  tf = 10.0, dt = 0.001):
         self.x = x0
+        self.y = y0
+        self.u = u0
         self.v = v0
         self.t = 0.0
         self.tf = tf
@@ -18,6 +20,8 @@ class Particle(object):
 
         self.tlabel = 'time (s)'
         self.xlabel = 'x (m)'
+        self.ylabel = 'y (m)'
+        self.ulabel = 'u (m/s)'
         self.vlabel = 'v (m/s)'
 
         npoints = int(tf/dt) # always starting at t = 0.0
